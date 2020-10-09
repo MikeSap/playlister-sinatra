@@ -9,6 +9,6 @@ class Song < ActiveRecord::Base
     end
 
     def self.find_by_slug(slug)
-        self.where(name == slug).first
+        self.all.find {|song| song.slug == slug}
      end
 end

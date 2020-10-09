@@ -9,7 +9,7 @@ class Artist < ActiveRecord::Base
     end
 
     def self.find_by_slug(slug)
-       self.where(name == slug).first
+        self.all.find {|artist|  artist.slug == slug}
     end
 
 end

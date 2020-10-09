@@ -9,7 +9,6 @@ class Genre < ActiveRecord::Base
     end
 
     def self.find_by_slug(slug)
-        binding.pry
-        self.find_by( )
+        self.all.find {|genre| genre.slug == slug}
      end
 end
